@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC269552-91C6-439A-BB6E-AE86EECA4434}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FootballSpentEarned</RootNamespace>
+    <AssemblyName>FootballSpentEarned</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=21.1460.41.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Licensing.21.1.41\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.WPF, Version=21.1460.41.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.SfChart.WPF.21.1.41\lib\net46\Syncfusion.SfChart.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Converter\ImageConverter.cs" />
+    <Compile Include="ViewModel\FootballRevenue.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\FootballMarket.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="Resources\data.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ClubIcons\genoa_cfc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageIcons\PremierLeague_%28England%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageIcons\Ligue__%28France%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageIcons\Serie_A_%28Italy%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageIcons\Bundesliga_%28Germany%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageIcons\La_Liga_%28Spain%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ClubIcons\acf_fiorentina.png" />
+    <Resource Include="ClubIcons\angers_sco.png" />
+    <Resource Include="ClubIcons\arminia_bielefeld.png" />
+    <Resource Include="ClubIcons\arsenal_fc.png" />
+    <Resource Include="ClubIcons\aston_villa.png" />
+    <Resource Include="ClubIcons\as_monaco.png" />
+    <Resource Include="ClubIcons\as_roma.png" />
+    <Resource Include="ClubIcons\as_st_etienne.png" />
+    <Resource Include="ClubIcons\atalanta_bc.png" />
+    <Resource Include="ClubIcons\athletic_club.png" />
+    <Resource Include="ClubIcons\atl_tico_madrid.png" />
+    <Resource Include="ClubIcons\bayern_m_nchen.png" />
+    <Resource Include="ClubIcons\bayer_leverkusen.png" />
+    <Resource Include="ClubIcons\benevento_calcio.png" />
+    <Resource Include="ClubIcons\bologna_fc.png" />
+    <Resource Include="ClubIcons\borussia_dortmund.png" />
+    <Resource Include="ClubIcons\borussia_m_gladbach.png" />
+    <Resource Include="ClubIcons\brighton___hove.png" />
+    <Resource Include="ClubIcons\burnley_fc.png" />
+    <Resource Include="ClubIcons\cagliari_calcio.png" />
+    <Resource Include="ClubIcons\ca_osasuna.png" />
+    <Resource Include="ClubIcons\cd_alav_s.png" />
+    <Resource Include="ClubIcons\celta_vigo.png" />
+    <Resource Include="ClubIcons\chelsea_fc.png" />
+    <Resource Include="ClubIcons\crystal_palace.png" />
+    <Resource Include="ClubIcons\c_diz_cf.png" />
+    <Resource Include="ClubIcons\dijon_fco.png" />
+    <Resource Include="ClubIcons\eintracht_frankfurt.png" />
+    <Resource Include="ClubIcons\elche_cf.png" />
+    <Resource Include="ClubIcons\eng.png" />
+    <Resource Include="ClubIcons\esp.png" />
+    <Resource Include="ClubIcons\everton_fc.png" />
+    <Resource Include="ClubIcons\fc_augsburg.png" />
+    <Resource Include="ClubIcons\fc_barcelona.png" />
+    <Resource Include="ClubIcons\fc_crotone.png" />
+    <Resource Include="ClubIcons\fc_k_ln.png" />
+    <Resource Include="ClubIcons\fc_lorient.png" />
+    <Resource Include="ClubIcons\fc_metz.png" />
+    <Resource Include="ClubIcons\fc_nantes.png" />
+    <Resource Include="ClubIcons\fc_schalke.png" />
+    <Resource Include="ClubIcons\fra.png" />
+    <Resource Include="ClubIcons\fsv_mainz.png" />
+    <Resource Include="ClubIcons\fulham_fc.png" />
+    <Resource Include="ClubIcons\ger.png" />
+    <Resource Include="ClubIcons\getafe_cf.png" />
+    <Resource Include="ClubIcons\girondins_bordeaux.png" />
+    <Resource Include="ClubIcons\granada_cf.png" />
+    <Resource Include="ClubIcons\hellas_verona.png" />
+    <Resource Include="ClubIcons\hertha_bsc.png" />
+    <Resource Include="ClubIcons\huesca_sd.png" />
+    <Resource Include="ClubIcons\internazionale.png" />
+    <Resource Include="ClubIcons\ita.png" />
+    <Resource Include="ClubIcons\juventus_fc.png" />
+    <Resource Include="ClubIcons\leeds_united.png" />
+    <Resource Include="ClubIcons\leicester_city.png" />
+    <Resource Include="ClubIcons\levante_ud.png" />
+    <Resource Include="ClubIcons\liverpool_fc.png" />
+    <Resource Include="ClubIcons\losc_lille.png" />
+    <Resource Include="ClubIcons\manchester_city.png" />
+    <Resource Include="ClubIcons\manchester_united.png" />
+    <Resource Include="ClubIcons\milan_ac.png" />
+    <Resource Include="ClubIcons\montpellier_hsc.png" />
+    <Resource Include="ClubIcons\newcastle_united.png" />
+    <Resource Include="ClubIcons\n_mes_olympique.png" />
+    <Resource Include="ClubIcons\ogc_nice.png" />
+    <Resource Include="ClubIcons\olympique_lyonnais.png" />
+    <Resource Include="ClubIcons\olympique_marseille.png" />
+    <Resource Include="ClubIcons\paris_st_germain.png" />
+    <Resource Include="ClubIcons\parma_calcio.png" />
+    <Resource Include="ClubIcons\rb_leipzig.png" />
+    <Resource Include="ClubIcons\rc_lens.png" />
+    <Resource Include="ClubIcons\rc_strasbourg.png" />
+    <Resource Include="ClubIcons\real_betis.png" />
+    <Resource Include="ClubIcons\real_madrid.png" />
+    <Resource Include="ClubIcons\real_sociedad.png" />
+    <Resource Include="ClubIcons\real_valladolid.png" />
+    <Resource Include="ClubIcons\sampdoria_uc.png" />
+    <Resource Include="ClubIcons\sc_freiburg.png" />
+    <Resource Include="ClubIcons\sd_eibar.png" />
+    <Resource Include="ClubIcons\sevilla_fc.png" />
+    <Resource Include="ClubIcons\sheffield_united.png" />
+    <Resource Include="ClubIcons\southampton_fc.png" />
+    <Resource Include="ClubIcons\spezia_calcio.png" />
+    <Resource Include="ClubIcons\ssc_napoli.png" />
+    <Resource Include="ClubIcons\ss_lazio.png" />
+    <Resource Include="ClubIcons\stade_brestois.png" />
+    <Resource Include="ClubIcons\stade_de_reims.png" />
+    <Resource Include="ClubIcons\stade_rennais.png" />
+    <Resource Include="ClubIcons\torino_fc.png" />
+    <Resource Include="ClubIcons\tottenham_hotspur.png" />
+    <Resource Include="ClubIcons\tsg_hoffenheim.png" />
+    <Resource Include="ClubIcons\udinese_calcio.png" />
+    <Resource Include="ClubIcons\union_berlin.png" />
+    <Resource Include="ClubIcons\us_sassuolo.png" />
+    <Resource Include="ClubIcons\valencia_cf.png" />
+    <Resource Include="ClubIcons\vfb_stuttgart.png" />
+    <Resource Include="ClubIcons\vfl_wolfsburg.png" />
+    <Resource Include="ClubIcons\villarreal_cf.png" />
+    <Resource Include="ClubIcons\werder_bremen.png" />
+    <Resource Include="ClubIcons\west_bromwich_albion.png" />
+    <Resource Include="ClubIcons\west_ham_united.png" />
+    <Resource Include="ClubIcons\wolverhampton_fc.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
