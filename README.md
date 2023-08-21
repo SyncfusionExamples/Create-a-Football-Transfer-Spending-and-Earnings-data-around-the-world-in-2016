@@ -9,4 +9,4 @@ This sample demonstrates how to Create a Football Transfer Spending and Earnings
 
 For a step by step procedure, refer to the [Football Spending and Earning data blog](https://www.syncfusion.com/blogs/post/visualize-transfer-spending-earning-wpf-scatter-chart.aspx)
 
-For step by step procedure for this blog : []()
+For step by step procedure for this blog : [Visualize the Transfer Spending and Earning among the Football League Clubs Using WPF Scatter Chart](https://www.syncfusion.com/blogs/post/visualize-transfer-spending-earning-wpf-scatter-chart.aspx)
